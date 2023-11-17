@@ -17,7 +17,7 @@ An example bot cookiecutter template made with the fastbots library.
 Install all the dependencies and then run the main.py form the root folder of the project.
 ```bash
     poetry install
-    ./run.sh
+    ./run.sh or ./run.bat (linux or windows)
 ```
 
 ### Dockerized:
