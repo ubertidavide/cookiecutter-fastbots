@@ -1,4 +1,4 @@
-from tasks import TestTask
+from tasks.test_task import TestTask
 
         
 if __name__ == '__main__':

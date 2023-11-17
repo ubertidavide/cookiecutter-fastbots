@@ -2,26 +2,29 @@ import logging
 
 from fastbots import Task, Bot, Page
 
-from pages import SearchPage
+from pages.search_page import SearchPage
 
 
 class TestTask(Task):
 
-    # retried n times
+    # main task code
     def run(self, bot: Bot) -> bool:
         logging.info('DO THINGS')
 
-        page: Page = SearchPage(bot).forward()
+        # open the search page do things and go forward
+        page: Page = SearchPage(bot=bot).forward()
 
+        # for every page founded do things and go forward
         while page:
             page = page.forward()
 
+        # for default it will succeed
         return True
 
-    # success part
+    # method executed on bot success, with it's payload
     def on_success(self, payload):
         logging.info(f'SUCCESS {payload}')
     
-    # failure part
+    # method executed on bot failure
     def on_failure(self, payload):
         logging.info(f'FAILED {payload}')

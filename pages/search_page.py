@@ -2,11 +2,12 @@ import logging
 
 from fastbots import Bot, Page, EC, WebElement, Keys
 
-from pages import ProductPage
+from pages.product_page import ProductPage
 
 
 class SearchPage(Page):
 
+    # page name it's the page_name used in the locators file, see below
     def __init__(self, bot: Bot, page_name: str = 'search_page'):
         super().__init__(bot, page_name)
 
@@ -22,4 +23,5 @@ class SearchPage(Page):
         product_element: WebElement = self.bot.wait.until(EC.element_to_be_clickable(self.__locator__('product_locator')))
         product_element.click()
 
+        # continue the chain interaction in the next page
         return ProductPage(bot=self.bot)

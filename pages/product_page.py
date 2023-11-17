@@ -5,7 +5,8 @@ from fastbots import Bot, Page, EC, WebElement
 
 class ProductPage(Page):
 
-    def __init__(self, bot: Bot, page_name: str = 'product_page'):
+    # page name it's the page_name used in the locators file, see below
+    def __init__(self, bot: Bot, page_name: str = 'product_page'): 
         super().__init__(bot, page_name)
 
     def forward(self) -> None:
@@ -16,4 +17,5 @@ class ProductPage(Page):
         # store data in the payload section, useful when i need to retrieve data on success
         self.bot.payload['result'] = name_element.text
 
+        # end the chain of pages interactins
         return None
