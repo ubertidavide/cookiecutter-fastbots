@@ -3,3 +3,5 @@ poetry.lock
 debug
 .venv
 Dockerfile
+run.sh
+docker-compose.yml
