@@ -1,9 +1,9 @@
 # cookiecutter-fastbots
-Ready to use project setup for web automated bot or scraper using the fastbots library.
-Make a bot in a faster way, without thinking at webdriver or selenium related code and config.
-Use a driver transparent library, with less boilerplate code.
-Be sure that if the locators of the page change you don't need to touch your code, but just quick adapt the config.
-Chek out docs and settings in the official repo: [fastbots](https://github.com/ubertidavide/fastbots).
+Ready to use project setup for web automated bot or scraper using the fastbots library.  
+Make a bot in a faster way, without thinking at webdriver or selenium related code and config.  
+Use a driver transparent library, with less boilerplate code.  
+Be sure that if the locators of the page change you don't need to touch your code, but just quick adapt the config.  
+Chek out docs and settings in the official repo: [fastbots](https://github.com/ubertidavide/fastbots).  
 
 ## Requirements
 
