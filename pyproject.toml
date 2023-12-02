@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "cookiecutter-fastbots"
-version = "0.1.0"
-description = "An example bot made with the fastbots library."
+version = "0.1.7"
+description = "A project template ready to use, tailored for effortless utilization in crafting web automated bots or scrapers, leveraging the fastbots library."
 authors = ["Davide <24529587+ubertidavide@users.noreply.github.com>"]
 license = "LICENSE"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastbots = "^0.1.1"
+fastbots = "^0.1.7"
 
 
 [build-system]
