@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cookiecutter-fastbots"
+version = "0.1.3"
+description = "Ready to use project template setup for web automated bot or scraper using the fastbots library."
+authors = ["Davide <24529587+ubertidavide@users.noreply.github.com>"]
+license = "LICENSE"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastbots = "^0.1.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
