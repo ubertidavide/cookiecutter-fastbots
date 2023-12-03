@@ -1,0 +1,8 @@
+{
+    "project_name": "Cookiecutter fastbots",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "project_short_description": "A project template ready to use, tailored for effortless utilization in crafting web automated bots or scrapers, leveraging the fastbots library.",
+    "full_name": "Uberti Davide",
+    "email": "24529587+ubertidavide@users.noreply.github.com",
+    "version": "0.1.7"
+}

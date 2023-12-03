@@ -6,8 +6,8 @@ from tasks.test_task import TestTask
 
 def main():
     parser = argparse.ArgumentParser(
-        prog='MyBot',
-        description='Bot builded with the fastbots library.',
+        prog='{{ cookiecutter.project_name }}',
+        description='{{ cookiecutter.project_short_description }}',
         epilog='Made with <3 using fastbots.')
 
     parser.add_argument('-tt', '--test_task', action='store_true')
@@ -20,5 +20,4 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
-    TestTask()()
+    main()
