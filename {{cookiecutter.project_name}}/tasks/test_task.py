@@ -5,26 +5,31 @@ from fastbots import Task, Bot, Page
 from pages.search_page import SearchPage
 
 
+# Define a TestTask class, which is a subclass of the Task class
 class TestTask(Task):
 
-    # main task code
+    # Main task code to be executed when running the script
     def run(self, bot: Bot) -> bool:
+        # Log information about the current action
         logging.info('DO THINGS')
 
-        # open the search page do things and go forward
+        # load all needed data in the pages interactions (es. login password loaded from a file using pandas)
+        bot.payload['input_data']['element_name'] = 'test'
+
+        # Open the search page, perform actions, and go forward
         page: Page = SearchPage(bot=bot).forward()
 
-        # for every page founded do things and go forward
+        # For every page found, perform actions and go forward
         while page:
             page = page.forward()
 
-        # for default it will succeed
+        # For default, the task will succeed
         return True
 
-    # method executed on bot success, with it's payload
+    # Method executed on bot success, with its payload
     def on_success(self, payload):
         logging.info(f'SUCCESS {payload}')
     
-    # method executed on bot failure
+    # Method executed on bot failure
     def on_failure(self, payload):
         logging.info(f'FAILED {payload}')
