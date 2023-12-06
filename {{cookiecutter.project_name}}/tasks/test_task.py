@@ -3,6 +3,7 @@ import logging
 from fastbots import Task, Bot, Page
 
 from pages.search_page import SearchPage
+from core import config
 
 
 # Define a TestTask class, which is a subclass of the Task class
@@ -14,7 +15,7 @@ class TestTask(Task):
         logging.info('DO THINGS')
 
         # load all needed data in the pages interactions (es. login password loaded from a file using pandas)
-        bot.payload['input_data']['element_name'] = 'test'
+        bot.payload['input_data']['element_name'] = config.EXAMPLE_INPUT
 
         # Open the search page, perform actions, and go forward
         page: Page = SearchPage(bot=bot).forward()
