@@ -1,6 +1,6 @@
 import logging
 
-from fastbots import Task, Bot, Page
+from fastbots import Task, Bot, Page, Payload
 
 from pages.search_page import SearchPage
 from core import config
@@ -15,10 +15,10 @@ class TestTask(Task):
         logging.info('DO THINGS')
 
         # load all needed data in the pages interactions (es. login password loaded from a file using pandas)
-        bot.payload['input_data']['element_name'] = config.EXAMPLE_INPUT
+        bot.payload.input_data = {'username': 'test', 'password': 'test', 'element_name': config.EXAMPLE_INPUT}
 
         # Open the search page, perform actions, and go forward
-        page: Page = SearchPage(bot=bot).forward()
+        page: Page = SearchPage(bot=bot)
 
         # For every page found, perform actions and go forward
         while page:
@@ -28,9 +28,14 @@ class TestTask(Task):
         return True
 
     # Method executed on bot success, with its payload
-    def on_success(self, payload):
-        logging.info(f'SUCCESS {payload}')
-    
+    def on_success(self, payload: Payload):
+        logging.info(f'SUCCESS {payload.downloads}')
+
     # Method executed on bot failure
-    def on_failure(self, payload):
-        logging.info(f'FAILED {payload}')
+    def on_failure(self, payload: Payload):
+        logging.info(f'FAILED {payload.output_data}')
+
+# Check if the script is executed as the main program
+if __name__ == '__main__':
+    # Start the above TestTask
+    TestTask()()

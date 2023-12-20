@@ -20,14 +20,14 @@ class SearchPage(Page):
 
         # Use locators specified in the file for flexibility and less code changes
         search_element: WebElement = self.bot.wait.until(EC.element_to_be_clickable(self.__locator__('search_locator')))
-        
+
         # Enter a search query and submit (using the loaded data in the task)
-        search_element.send_keys(self.bot.payload['input_data']['element_name'])
+        search_element.send_keys(self.bot.payload.input_data['element_name'])
         search_element.send_keys(Keys.ENTER)
 
         # Locate the product element and click on it
-        product_element: WebElement = self.bot.wait.until(EC.element_to_be_clickable(self.__locator__('product_locator')))
-        product_element.click()
+        #product_element: WebElement = self.bot.wait.until(EC.element_to_be_clickable(self.__locator__('product_locator')))
+        #product_element.click()
 
         # Continue the chain of interaction on the next page (ProductPage)
         return ProductPage(bot=self.bot)

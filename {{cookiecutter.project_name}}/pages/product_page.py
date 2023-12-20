@@ -8,7 +8,7 @@ class ProductPage(Page):
 
     # Constructor to initialize the ProductPage instance
     # The page_name is used in the locators file; default is 'product_page'
-    def __init__(self, bot: Bot, page_name: str = 'product_page'): 
+    def __init__(self, bot: Bot, page_name: str = 'product_page'):
         super().__init__(bot, page_name)
 
     # Define the forward method for navigating to the next page
@@ -18,14 +18,15 @@ class ProductPage(Page):
 
         # Use locators specified in the file for flexibility and less code changes
         # name_element: WebElement = self.bot.driver.find_element(*self.__locator__('name_locator'))
-        name_element: WebElement = self.bot.wait.until(EC.element_to_be_clickable(self.__locator__('name_locator')))
-        
+        #name_element: WebElement = self.bot.wait.until(EC.element_to_be_clickable(self.__locator__('name_locator')))
+
         # Store data in the payload section for future retrieval on success
-        self.bot.payload['result'] = name_element.text
+        #self.bot.payload.input_data['element_name'] = name_element.text
 
         # example of downloading the product png images and rename it (check download folder settings)
         # name_element.click() for example on element download button
-        # self.bot.wait_downloaded_file_path("png", new_name_file=self.bot.payload['data']['element_name'])
+        # self.bot.wait_downloaded_file_path("png", new_name_file=self.bot.payload.input_data['element_name'])
+        # it will put the download path in the payload.downloads datastore class when downloaded and renamed
 
         # End the chain of page interactions
         return None
