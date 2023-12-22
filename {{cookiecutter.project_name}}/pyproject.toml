@@ -6,11 +6,18 @@ authors = ["{{ cookiecutter.full_name }} <{{ cookiecutter.email }}>"]
 license = "LICENSE"
 readme = "README.md"
 
+[virtualenvs]
+in-project = true
+
 [tool.poetry.dependencies]
 python = "^3.11"
-fastbots = "^0.2.3"
+fastbots = "^0.2.5"
 
+[tool.poetry.group.dev.dependencies]
+Nuitka = "^1.9.5"
+debugpy = "^1.8.0"
+ordered-set = "^4.1.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
