@@ -38,10 +38,21 @@ Ensure that you have the desired web browser installed on your system.
 After installing the dependencies and configuring the browser:
 
 Run the **main.py** script from the root folder of the project:
+
 ```bash
-    ./run.sh or ./run.bat (linux or windows)
+    cd {{cookiecutter.project_name}}
+    ./scripts/run.sh or ./scripts/run.bat (linux or windows)
 ```
 This script will execute the automation tasks specified in the main.py file.
+
+#### Debugging
+
+From VSCode first run the below script and then `Run -> Start Debugging` (F5 Hotkey).
+
+```bash
+    cd {{cookiecutter.project_name}}
+    ./scripts/debug.sh or ./scripts/debug.bat (linux or windows)
+```
 
 ### Dockerized
 
@@ -56,6 +67,7 @@ Run the following command to start the project using Docker Compose:
 ```bash
 docker-compose up
 ```
+
 This command will build the Docker image and start the containerized environment.
 
 Please note that the Dockerized approach provides a self-contained environment with all dependencies pre-configured, making it easy to run the project consistently across different systems.
