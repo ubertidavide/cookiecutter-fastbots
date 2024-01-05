@@ -11,7 +11,7 @@ in-project = true
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastbots = "^0.2.5"
+fastbots = "^0.2.6"
 
 [tool.poetry.group.dev.dependencies]
 Nuitka = "^1.9.5"
